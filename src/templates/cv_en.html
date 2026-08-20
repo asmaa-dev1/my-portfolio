@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - ASMAA ELHINT - Full Stack Developer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      padding: 10mm 12mm 8mm 12mm;
+      margin: 0 auto;
+      font-size: 8.8pt;
+      line-height: 1.35;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Top Section */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .header-left {
+      width: 68%;
+    }
+
+    .name {
+      font-size: 20pt;
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .role-title {
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .bio-summary {
+      font-size: 8.2pt;
+      color: #374151;
+      line-height: 1.36;
+      text-align: left;
+      word-spacing: normal;
+    }
+
+    .header-right-socials {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-top: 4px;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .social-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Black Contact Banner */
+    .contact-banner {
+      background-color: #000000;
+      color: #ffffff;
+      border-radius: 4px;
+      padding: 7.5px 12px;
+      display: grid;
+      grid-template-columns: 1.35fr 1.1fr 1.15fr;
+      row-gap: 5px;
+      column-gap: 12px;
+      font-size: 8pt;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #ffffff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .contact-icon {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Main Grid Layout */
+    .main-content {
+      display: grid;
+      grid-template-columns: 63% 34%;
+      gap: 3%;
+    }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 900;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+    }
+
+    .section-block {
+      margin-bottom: 12px;
+    }
+
+    /* Timeline Container on Left */
+    .timeline-container {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline-track {
+      position: absolute;
+      left: 4px;
+      top: 5px;
+      bottom: 8px;
+      width: 1.5px;
+      background-color: #cbd5e1;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 11px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -18px;
+      top: 3.5px;
+      width: 9.5px;
+      height: 9.5px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 2px solid #000000;
+      z-index: 2;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .item-title {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #000000;
+      line-height: 1.2;
+    }
+
+    .item-company-role {
+      font-size: 9pt;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 1px;
+    }
+
+    .item-location-right {
+      font-size: 8pt;
+      font-style: italic;
+      color: #6b7280;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    .item-subtitle {
+      font-size: 8.2pt;
+      font-weight: 600;
+      color: #4b5563;
+      margin-bottom: 1px;
+    }
+
+    .item-period {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+
+    .item-period-meta {
+      font-size: 7.8pt;
+      font-weight: 600;
+      color: #4b5563;
+      margin-bottom: 3px;
+    }
+
+    /* Bullet Lists */
+    .bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 3px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 12px;
+      font-size: 7.85pt;
+      color: #27272a;
+      line-height: 1.34;
+      margin-bottom: 2.5px;
+      text-align: left;
+      word-spacing: normal;
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #000000;
+      font-size: 9pt;
+      top: -0.5px;
+      line-height: 1;
+    }
+
+    /* Right Column (Skills & Certifications) */
+    .skill-category {
+      margin-bottom: 7px;
+    }
+
+    .skill-category-title {
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 2px;
+    }
+
+    .skill-items {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .skill-items li {
+      position: relative;
+      padding-left: 11px;
+      font-size: 8.1pt;
+      color: #1f2937;
+      line-height: 1.32;
+    }
+
+    .skill-items li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #000000;
+      font-size: 8.5pt;
+      top: -0.5px;
+    }
+
+    /* Certifications List */
+    .cert-item {
+      margin-bottom: 6.5px;
+    }
+
+    .cert-title-year {
+      font-size: 8.5pt;
+      font-weight: 800;
+      color: #000000;
+      line-height: 1.2;
+    }
+
+    .cert-issuer {
+      font-size: 7.8pt;
+      color: #4b5563;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    .cert-issuer::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #6b7280;
+    }
+
+    /* Languages Box */
+    .languages-box {
+      margin-top: 10px;
+    }
+
+    .languages-box .bullet-list li {
+      font-size: 8.2pt;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    .languages-box .bullet-list li strong {
+      font-weight: 700;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header Profile -->
+  <div class="top-header">
+    <div class="header-left">
+      <h1 class="name">ASMAA ELHINT</h1>
+      <h2 class="role-title">FULL STACK DEVELOPER</h2>
+      <p class="bio-summary">
+        Passionate Full Stack Developer focused on creating innovative digital solutions. Specialized in modern web technologies and task automation. Currently a student in Professional Bachelor's Degree in Computer Development at Hassan II University, with solid experience in creating robust and efficient web applications.
+      </p>
+    </div>
+
+    <div class="header-right-socials">
+      <div class="social-item">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <span>@ASMAA ELHINT</span>
+      </div>
+
+      <div class="social-item">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        <span>@ASMAA EL HINT</span>
+      </div>
+
+      <div class="social-item">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span>portfolioasmaa.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Bar (Black) -->
+  <div class="contact-banner">
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      <span>asmaaelhint0@gmail.com</span>
+    </div>
+
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>+212 632-804247</span>
+    </div>
+
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>
+      <span>portfolioasmaa.com</span>
+    </div>
+
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+        <line x1="8" y1="21" x2="16" y2="21"/>
+        <line x1="12" y1="17" x2="12" y2="21"/>
+      </svg>
+      <span>Flexible : remote or on-site</span>
+    </div>
+
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span>Casablanca, Morocco</span>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="main-content">
+
+    <!-- Left Column: Education, Experience, Languages -->
+    <div class="left-col">
+
+      <!-- Education Section -->
+      <div class="section-block">
+        <h2 class="section-title">Education & Qualifications</h2>
+        
+        <div class="timeline-container">
+          <div class="timeline-track"></div>
+
+          <!-- Education 1 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="item-header">
+              <div class="item-title">Professional Bachelor's Degree in Computer Development</div>
+              <div class="item-location-right">CASABLANCA</div>
+            </div>
+            <div class="item-subtitle">Hassan II University of Casablanca</div>
+            <div class="item-period">2025 – 2026</div>
+          </div>
+
+          <!-- Education 2 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="item-header">
+              <div class="item-title">Specialized Technician in Full Stack Web Development</div>
+              <div class="item-location-right">CASABLANCA</div>
+            </div>
+            <div class="item-subtitle">ISTA CFP-HASSANIA</div>
+            <div class="item-period">2023 – 2025</div>
+          </div>
+
+          <!-- Education 3 -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="item-header">
+              <div class="item-title">Baccalaureate in Life and Earth Sciences</div>
+              <div class="item-location-right">CASABLANCA</div>
+            </div>
+            <div class="item-subtitle">Ben M'sik High School</div>
+            <div class="item-period">2022 – 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience Section -->
+      <div class="section-block">
+        <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+        <div class="timeline-container">
+          <div class="timeline-track"></div>
+
+          <!-- Experience 1: VTC France -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="item-company-role">VTC France — Full Stack Developer & IT Project Manager</div>
+            <div class="item-period-meta">November 2024 – May 2025 | 6 months | Casablanca, On-site</div>
+            <ul class="bullet-list">
+              <li>Full Stack development of web applications using PHP, MySQL, and JavaScript, including JB Manager — VTC France's internal commercial management application.</li>
+              <li>Built and maintained frontend and backend features, API integrations, and project upkeep.</li>
+              <li>IT Project Manager — JB Tracking (Secoreg Project): client coordination, requirements gathering, and overseeing the development of a vehicle and driver tracking solution.</li>
+              <li>Acted as the key interface between the Secoreg client and the internal technical team.</li>
+            </ul>
+          </div>
+
+          <!-- Experience 2: Elite Solutions Maroc -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="item-company-role">Elite Solutions Maroc — Full Stack Developer</div>
+            <div class="item-period-meta">September – December 2025 | 4 months | Casablanca, On-site</div>
+            <ul class="bullet-list">
+              <li>Development and maintenance of the company website and internal enterprise applications.</li>
+              <li>Built complete web features (frontend + backend) using Laravel, React, and SQL.</li>
+              <li>Integrated responsive UI components and optimized application performance.</li>
+              <li>Collaborated with the technical team in an Agile environment.</li>
+            </ul>
+          </div>
+
+          <!-- Experience 3: Seeward -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="item-company-role">Seeward (France, Remote) — Full Stack Developer</div>
+            <div class="item-period-meta">March – April 2025 | 3 months | Remote</div>
+            <ul class="bullet-list">
+              <li>Development of REST APIs with Node.js for vulnerability data integration.</li>
+              <li>Creation of front-end interfaces with React and Tailwind CSS.</li>
+              <li>Connection between front-end and back-end via REST APIs.</li>
+              <li>Contribution to the development of a platform unifying asset information, vulnerability data, and threat intelligence.</li>
+              <li>Technologies used: Python, React, Node.js, REST APIs, Tailwind CSS.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages Section -->
+      <div class="languages-box">
+        <h2 class="section-title">Languages</h2>
+        <ul class="bullet-list">
+          <li><strong>Arabic:</strong> Native language</li>
+          <li><strong>Amazigh:</strong> Native language</li>
+          <li><strong>French:</strong> Fluent</li>
+          <li><strong>English:</strong> Professional</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Skills & Certifications -->
+    <div class="right-col">
+
+      <!-- Technical Skills -->
+      <div class="section-block">
+        <h2 class="section-title">TECHNICAL SKILLS</h2>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Programming Languages</div>
+          <ul class="skill-items">
+            <li>JavaScript (React)</li>
+            <li>Python</li>
+            <li>PHP</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Front-end</div>
+          <ul class="skill-items">
+            <li>Html / Css / JavaScript</li>
+            <li>Bootstrap / Tailwind css</li>
+            <li>React.js</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Back-end</div>
+          <ul class="skill-items">
+            <li>Laravel</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Databases</div>
+          <ul class="skill-items">
+            <li>MySQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-title">Tools & Methodologies</div>
+          <ul class="skill-items">
+            <li>Git</li>
+            <li>Docker</li>
+            <li>Agile/Scrum</li>
+            <li>REST API</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section-block">
+        <h2 class="section-title">CERTIFICATIONS</h2>
+
+        <div class="cert-item">
+          <div class="cert-title-year">Agile/Scrum Methodologies | 2024</div>
+          <div class="cert-issuer">@certiprof</div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-title-year">Business Intelligence Foundation | 2024</div>
+          <div class="cert-issuer">@certiprof</div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-title-year">JavaScript | 2024</div>
+          <div class="cert-issuer">@cisco</div>
+        </div>
+
+        <div class="cert-item">
+          <div class="cert-title-year">Python | 2024</div>
+          <div class="cert-issuer">@cisco</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

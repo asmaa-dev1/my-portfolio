@@ -1,0 +1,523 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   ASMAA ELHINT — DESIGN SYSTEM, THEME ENGINE & ANIMATIONS
+   ========================================================================== */
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* --------------------------------------------------------------------------
+   STAGGERED ENTRANCE REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes fadeInUpReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.97);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.reveal-fade-up {
+  opacity: 0;
+  animation: fadeInUpReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.22s; }
+.delay-300 { animation-delay: 0.36s; }
+.delay-400 { animation-delay: 0.50s; }
+.delay-500 { animation-delay: 0.65s; }
+.delay-600 { animation-delay: 0.80s; }
+.delay-700 { animation-delay: 0.95s; }
+.delay-800 { animation-delay: 1.10s; }
+.delay-900 { animation-delay: 1.25s; }
+
+/* --------------------------------------------------------------------------
+   AMBIENT BACKGROUND PATTERNS & AURORA GLOWS
+   -------------------------------------------------------------------------- */
+.bg-dots-pattern {
+  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(212, 84, 126, 0.12) 1.2px, transparent 1.2px);
+}
+
+.light .bg-dots-pattern {
+  background-image: radial-gradient(rgba(212, 84, 126, 0.15) 1.2px, transparent 1.2px);
+}
+
+@keyframes auroraDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(35px, -25px) scale(1.15);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+}
+
+.aurora-orb {
+  animation: auroraDrift 16s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.aurora-orb-reverse {
+  animation: auroraDrift 20s ease-in-out infinite reverse;
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   DARK THEME (Default)
+   -------------------------------------------------------------------------- */
+:root, .dark {
+  --color-bg: #060608;
+  --color-bg-secondary: #0d0d12;
+  --color-navbar: rgba(13, 13, 18, 0.85);
+  --color-card: #111115;
+  --color-card-hover: #16161c;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  
+  --color-primary: #d4547e;
+  --color-primary-dark: #a83d62;
+  --color-primary-light: #e07a9c;
+  --color-primary-pastel: #f5b8cc;
+  --color-primary-glow: rgba(212, 84, 126, 0.28);
+
+  --color-cyan: #18CCFC;
+  --color-purple: #6344F5;
+  --color-neon-purple: #AE48FF;
+  --color-emerald: #22c55e;
+  --color-amber: #f59e0b;
+  --color-blue: #3b82f6;
+
+  --color-text: #f9fafb;
+  --color-text-secondary: #9ca3af;
+  --color-text-tertiary: #6b7280;
+
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+/* --------------------------------------------------------------------------
+   LIGHT THEME
+   -------------------------------------------------------------------------- */
+.light {
+  --color-bg: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-navbar: rgba(255, 255, 255, 0.88);
+  --color-card: #ffffff;
+  --color-card-hover: #f8fafc;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-subtle: rgba(0, 0, 0, 0.04);
+  
+  --color-primary: #d4547e;
+  --color-primary-dark: #a83d62;
+  --color-primary-light: #e07a9c;
+  --color-primary-pastel: #f5b8cc;
+  --color-primary-glow: rgba(212, 84, 126, 0.18);
+
+  --color-cyan: #0284c7;
+  --color-purple: #4f46e5;
+  --color-neon-purple: #7c3aed;
+  --color-emerald: #16a34a;
+  --color-amber: #d97706;
+  --color-blue: #2563eb;
+
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.dark body {
+  background: radial-gradient(circle at 50% 0%, #170d14 0%, #060608 55%);
+}
+
+.light body {
+  background: radial-gradient(circle at 50% 0%, #fff1f5 0%, #f8fafc 55%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #060608;
+}
+.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e1e24;
+  border-radius: 9999px;
+  border: 2px solid #060608;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f8fafc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* --------------------------------------------------------------------------
+   GRADIENTS & TEXT STYLES
+   -------------------------------------------------------------------------- */
+.gradient-text {
+  background: linear-gradient(135deg, #a83d62 0%, #d4547e 40%, #e07a9c 75%, #f5b8cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #18CCFC 0%, #6344F5 50%, #AE48FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --------------------------------------------------------------------------
+   SPOTLIGHT CARDS (Mouse-following interactive glow)
+   -------------------------------------------------------------------------- */
+.spotlight-card {
+  position: relative;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--spotlight-color, rgba(212, 84, 126, 0.14)),
+    transparent 40%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+.dark .spotlight-card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.light .spotlight-card {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.light .spotlight-card:hover {
+  border-color: rgba(212, 84, 126, 0.3);
+  box-shadow: 0 15px 35px -5px rgba(212, 84, 126, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   360° ROTATING CONIC BORDER LASER (Border Sweep)
+   -------------------------------------------------------------------------- */
+.conic-border-glow {
+  position: relative;
+}
+
+.conic-border-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 20%,
+    var(--color-primary) 35%,
+    var(--color-primary-light) 50%,
+    var(--color-primary) 65%,
+    transparent 80%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  animation: rotate-border 4s linear infinite;
+  z-index: 2;
+}
+
+.conic-border-glow:hover::after {
+  opacity: 1;
+}
+
+@keyframes rotate-border {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   KINETIC LASER BEAMS (Hero section background)
+   -------------------------------------------------------------------------- */
+.beam-static {
+  stroke-dasharray: none;
+}
+
+.beam-path {
+  animation: beam-travel 6s linear infinite;
+}
+
+@keyframes beam-travel {
+  0% {
+    stroke-dashoffset: 3100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   DUAL INFINITE MARQUEE RIBBONS
+   -------------------------------------------------------------------------- */
+.marquee-container {
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+}
+
+.marquee-track-forward {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marquee-forward 35s linear infinite;
+}
+
+.marquee-track-reverse {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marquee-reverse 38s linear infinite;
+}
+
+.marquee-container:hover .marquee-track-forward,
+.marquee-container:hover .marquee-track-reverse {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-forward {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ORBITAL RINGS & ROTATING DOTS (Impact Stats & Clock)
+   -------------------------------------------------------------------------- */
+.orbital-ring {
+  animation: spin-clockwise 14s linear infinite;
+}
+
+.orbital-dot {
+  animation: spin-clockwise 4s linear infinite;
+  transform-origin: center;
+}
+
+.orbital-dot-reverse {
+  animation: spin-counter-clockwise 6s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-counter-clockwise {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-clockwise 20s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   RADAR PULSE (Available for Work Badge)
+   -------------------------------------------------------------------------- */
+.radar-pulse {
+  animation: ping-wave 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping-wave {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FLOAT PARTICLES & AURORA
+   -------------------------------------------------------------------------- */
+.float-slow {
+  animation: float-anim 5s ease-in-out infinite;
+}
+
+@keyframes float-anim {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+.aurora-drift {
+  animation: aurora 14s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate(-10%, -10%) scale(1);
+  }
+  100% {
+    transform: translate(15%, 15%) scale(1.2);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SHIMMER EFFECT
+   -------------------------------------------------------------------------- */
+.shimmer-bg {
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-anim 2s ease-in-out infinite;
+}
+
+@keyframes shimmer-anim {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   STICKER CUTLINE FILTER (Misc Section)
+   -------------------------------------------------------------------------- */
+.sticker-item {
+  transform: rotate(var(--item-rotation, 0deg)) scale(var(--item-scale, 1));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.sticker-item:hover {
+  transform: rotate(0deg) scale(1.15);
+  z-index: 20 !important;
+  filter: drop-shadow(0 15px 25px rgba(212, 84, 126, 0.35));
+}
+
+/* --------------------------------------------------------------------------
+   NAVBAR GLOW BEAM
+   -------------------------------------------------------------------------- */
+.nav-glow-beam {
+  background: linear-gradient(90deg, transparent 0%, var(--color-primary) 50%, transparent 100%);
+  animation: beam-slide 4s ease-in-out infinite alternate;
+}
+
+@keyframes beam-slide {
+  0% {
+    left: 0%;
+    width: 30%;
+    opacity: 0.3;
+  }
+  50% {
+    left: 40%;
+    width: 50%;
+    opacity: 1;
+  }
+  100% {
+    left: 70%;
+    width: 30%;
+    opacity: 0.3;
+  }
+}
