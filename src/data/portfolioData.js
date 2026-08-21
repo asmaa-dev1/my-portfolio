@@ -48,6 +48,7 @@ export const portfolioData = {
     {
       role: "Full Stack Developer & IT Project Manager",
       company: "VTC France",
+      logo: "/companies/jb-vtc.png",
       period: "November 2024 – May 2025",
       duration: "6 months",
       type: "Casablanca, On-site",
@@ -64,6 +65,7 @@ export const portfolioData = {
     {
       role: "Full Stack Developer",
       company: "Elite Solutions Maroc",
+      logo: "/companies/elite-solutions.png",
       period: "September – December 2025",
       duration: "4 months",
       type: "Casablanca, On-site",
@@ -80,6 +82,7 @@ export const portfolioData = {
     {
       role: "Full Stack Developer",
       company: "Seeward (France, Remote)",
+      logo: "/companies/seeward.png",
       period: "March – April 2025",
       duration: "3 months",
       type: "Remote · France",

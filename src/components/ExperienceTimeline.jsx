@@ -132,13 +132,21 @@ function MilestoneItem({ exp, idx, isEven, smoothProgress, totalCount }) {
       >
         {/* Main Circular Icon Marker */}
         <div
-          className="w-11 h-11 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 relative z-10"
+          className="w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 relative z-10 p-2 bg-white border-2 overflow-hidden"
           style={{
-            backgroundColor: exp.color,
+            borderColor: exp.color,
             boxShadow: `0 0 0 4px #060608, 0 0 25px 4px ${exp.color}70`
           }}
         >
-          {expIcons[idx % expIcons.length]}
+          {exp.logo ? (
+            <img
+              src={exp.logo}
+              alt={exp.company}
+              className="w-full h-full object-contain select-none"
+            />
+          ) : (
+            expIcons[idx % expIcons.length]
+          )}
         </div>
       </motion.div>
 
