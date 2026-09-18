@@ -11,38 +11,16 @@ const executablePath = fs.existsSync('C:\\Program Files\\Google\\Chrome\\Applica
   ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
   : 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 
-const photoPath = path.join(rootDir, 'public', 'profile_photo.png');
-let base64Photo = '';
-if (fs.existsSync(photoPath)) {
-  const photoBuffer = fs.readFileSync(photoPath);
-  base64Photo = `data:image/png;base64,${photoBuffer.toString('base64')}`;
-}
-
 async function generatePdfs() {
   console.log(`Using browser executable: ${executablePath}`);
 
-  const templates = [
-    path.join(rootDir, 'src', 'templates', 'cv_en.html'),
-    path.join(rootDir, 'src', 'templates', 'cv_fr.html'),
-    path.join(rootDir, 'src', 'templates', 'cv_de.html')
-  ];
-
-  if (base64Photo) {
-    for (const tmplPath of templates) {
-      let content = fs.readFileSync(tmplPath, 'utf-8');
-      content = content.replace(/<img class="profile-photo"[^>]*src="data:image\/[^"]+"[^>]*>/, `<img class="profile-photo" src="${base64Photo}" alt="Asmaa Elhint" />`);
-      content = content.replace(/<img class="profile-photo" src="[^"]*"[^>]*>/, `<img class="profile-photo" src="${base64Photo}" alt="Asmaa Elhint" />`);
-      fs.writeFileSync(tmplPath, content, 'utf-8');
-    }
-  }
-  
   const browser = await puppeteer.launch({
     executablePath,
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
   });
 
-  const artifactDir = 'C:\\Users\\elhin\\.gemini\\antigravity\\brain\\88c0ae4c-f2b1-474e-a6aa-dc33cb2b5ad2';
+  const artifactDir = 'C:\\Users\\elhin\\.gemini\\antigravity\\brain\\c1a90a57-3434-4485-afd4-df325f034bd1';
   const desktopDir = 'c:\\Users\\elhin\\OneDrive\\Desktop';
 
   const files = [
