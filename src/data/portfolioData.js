@@ -46,21 +46,21 @@ export const portfolioData = {
 
   experiences: [
     {
-      role: "Full Stack Developer & IT Project Manager",
+      role: "Full Stack Developer & Software Engineer",
       company: "VTC France",
       logo: "/companies/jb-vtc.png",
       period: "November 2025 – April 2026",
       duration: "6 months",
       type: "Casablanca, On-site",
       color: "#d4547e",
-      description: "Full Stack development of internal commercial applications and project management for GPS tracking solutions.",
+      description: "Full Stack development of internal commercial applications and software engineering for GPS tracking solutions.",
       highlights: [
         "Full Stack development of web applications using PHP, MySQL, and JavaScript, including JB Manager — VTC France's internal commercial management application.",
         "Built and maintained frontend and backend features, API integrations, and project upkeep.",
-        "IT Project Manager — JB Tracking (Secoreg Project): client coordination, requirements gathering, and overseeing the development of a vehicle and driver tracking solution for Secoreg.",
+        "Technical Lead — JB Tracking (Secoreg Project): client coordination, requirements gathering, and overseeing the development of a vehicle and driver tracking solution for Secoreg.",
         "Acted as the key interface between the Secoreg client and the internal technical team to deliver JB Tracking."
       ],
-      skills: ["PHP", "MySQL", "JavaScript", "REST APIs", "IT Project Management", "GPS Tracking"]
+      skills: ["PHP", "MySQL", "JavaScript", "REST APIs", "Software Engineering", "GPS Tracking"]
     },
     {
       role: "Full Stack Developer",
