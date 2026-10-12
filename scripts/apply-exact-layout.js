@@ -36,7 +36,7 @@ const commonCss = `
       padding: 8mm 12mm 5mm 12mm;
       margin: 0 auto;
       font-size: 8.2pt;
-      line-height: 1.3;
+      line-height: 1.32;
       position: relative;
       overflow: hidden;
     }
@@ -51,8 +51,8 @@ const commonCss = `
     }
 
     .header-photo-wrapper {
-      width: 195px;
-      height: 165px;
+      width: 190px;
+      height: 160px;
       flex-shrink: 0;
       overflow: hidden;
       border: none;
@@ -78,7 +78,7 @@ const commonCss = `
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding-bottom: 2px;
+      padding-bottom: 3px;
     }
 
     .name {
@@ -101,15 +101,15 @@ const commonCss = `
     }
 
     .bio-summary {
-      font-size: 7.9pt;
+      font-size: 8pt;
       color: #374151;
-      line-height: 1.32;
+      line-height: 1.34;
       text-align: left;
       word-spacing: normal;
     }
 
     .header-right-socials {
-      width: 180px;
+      width: 185px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
@@ -122,10 +122,15 @@ const commonCss = `
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 7.7pt;
+      font-size: 7.8pt;
       font-weight: 600;
       color: #111827;
       text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-item:hover {
+      color: #2563eb;
     }
 
     .social-icon {
@@ -139,12 +144,12 @@ const commonCss = `
       background-color: #000000;
       color: #ffffff;
       border-radius: 2px;
-      padding: 5px 12px;
+      padding: 5.5px 12px;
       display: grid;
       grid-template-columns: 1.35fr 1.1fr 1.15fr;
       row-gap: 3.5px;
       column-gap: 12px;
-      font-size: 7.6pt;
+      font-size: 7.7pt;
       font-weight: 500;
       margin-top: 0px;
       margin-bottom: 8px;
@@ -208,7 +213,7 @@ const commonCss = `
 
     .timeline-item {
       position: relative;
-      margin-bottom: 8px;
+      margin-bottom: 7.5px;
     }
 
     .timeline-item:last-child {
@@ -289,8 +294,8 @@ const commonCss = `
       padding-left: 12px;
       font-size: 7.6pt;
       color: #27272a;
-      line-height: 1.3;
-      margin-bottom: 2px;
+      line-height: 1.31;
+      margin-bottom: 1.8px;
       text-align: left;
       word-spacing: normal;
     }
@@ -305,13 +310,13 @@ const commonCss = `
       line-height: 1;
     }
 
-    /* Right Column (Skills & Certifications) */
+    /* Right Column (Skills & Certifications) - Balanced Spacing */
     .skill-category {
-      margin-bottom: 5px;
+      margin-bottom: 7px;
     }
 
     .skill-category-title {
-      font-size: 8.4pt;
+      font-size: 8.5pt;
       font-weight: 800;
       color: #000000;
       margin-bottom: 2px;
@@ -325,9 +330,9 @@ const commonCss = `
     .skill-items li {
       position: relative;
       padding-left: 11px;
-      font-size: 7.6pt;
+      font-size: 7.7pt;
       color: #1f2937;
-      line-height: 1.28;
+      line-height: 1.32;
     }
 
     .skill-items li::before {
@@ -341,18 +346,18 @@ const commonCss = `
 
     /* Certifications List */
     .cert-item {
-      margin-bottom: 4px;
+      margin-bottom: 5.5px;
     }
 
     .cert-title-year {
-      font-size: 8.1pt;
+      font-size: 8.2pt;
       font-weight: 800;
       color: #000000;
       line-height: 1.2;
     }
 
     .cert-issuer {
-      font-size: 7.5pt;
+      font-size: 7.6pt;
       color: #4b5563;
       padding-left: 10px;
       position: relative;
@@ -367,14 +372,14 @@ const commonCss = `
 
     /* Languages Box in Left Column */
     .languages-box-left {
-      margin-top: 6px;
+      margin-top: 7px;
     }
 
     .languages-box-left .bullet-list li {
-      font-size: 7.6pt;
+      font-size: 7.7pt;
       font-weight: 500;
       text-align: left;
-      line-height: 1.3;
+      line-height: 1.32;
       margin-bottom: 1.5px;
     }
 
@@ -456,26 +461,26 @@ function buildHtml({ lang, title, roleTitle, bio, contactLocation, eduTitle, edu
     </div>
 
     <div class="header-right-socials">
-      <a href="https://linkedin.com/in/asmaa-elhint" target="_blank" class="social-item">
+      <a href="https://linkedin.com/in/asmaa-elhint" target="_blank" rel="noopener noreferrer" class="social-item">
         <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.72.78-1.72 1.73s.77 1.72 1.72 1.72 1.73-.77 1.73-1.72-.78-1.73-1.73-1.73z"/>
         </svg>
         <span>@ASMAA ELHINT</span>
       </a>
 
-      <a href="https://github.com/asmaa-dev1" target="_blank" class="social-item">
+      <a href="https://github.com/asmaa-dev1" target="_blank" rel="noopener noreferrer" class="social-item">
         <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
         <span>@ASMAA EL HINT</span>
       </a>
 
-      <a href="https://huggingface.co/asmaa-dev1" target="_blank" class="social-item">
+      <a href="https://huggingface.co/asmaa-dev1" target="_blank" rel="noopener noreferrer" class="social-item">
         <span style="font-size: 11px; line-height: 1; display: inline-block;">🤗</span>
         <span>@ASMAA EL HINT</span>
       </a>
 
-      <a href="https://www.portfolioasmaa.com" target="_blank" class="social-item">
+      <a href="https://www.portfolioasmaa.com/" target="_blank" rel="noopener noreferrer" class="social-item">
         <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="10"/>
           <line x1="2" y1="12" x2="22" y2="12"/>
@@ -503,7 +508,7 @@ function buildHtml({ lang, title, roleTitle, bio, contactLocation, eduTitle, edu
       <span>+212 632-804247</span>
     </a>
 
-    <a href="https://www.portfolioasmaa.com" target="_blank" class="contact-item">
+    <a href="https://www.portfolioasmaa.com/" target="_blank" rel="noopener noreferrer" class="contact-item">
       <svg class="contact-icon" viewBox="0 0 24 24">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
@@ -618,7 +623,7 @@ const enData = {
   expItems: [
     {
       role: 'VTC France — Full Stack Developer & IT Project Manager',
-      periodMeta: 'November 2024 – May 2025 | 6 months | Casablanca, On-site',
+      periodMeta: 'November 2025 – April 2026 | 6 months | Casablanca, On-site',
       bullets: [
         'Full Stack development of web applications using PHP, MySQL, and JavaScript, including JB Manager — VTC France\'s internal commercial management application.',
         'Built and maintained frontend and backend features, API integrations, and project upkeep.',
@@ -685,7 +690,7 @@ const enData = {
     { title: 'JavaScript | 2024', issuer: '@cisco' },
     { title: 'Python | 2024', issuer: '@cisco' }
   ],
-  footerText: 'For more projects on GitHub and Huggingface, visit my portfolio <strong style="color: #000;">@portfolioasmaa.com</strong>'
+  footerText: 'For more projects on GitHub and Huggingface, visit my portfolio <a href="https://www.portfolioasmaa.com/" target="_blank" rel="noopener noreferrer" style="color: #000; font-weight: 700; text-decoration: none;">@portfolioasmaa.com</a>'
 };
 
 // 2. FRENCH TEMPLATE
@@ -720,7 +725,7 @@ const frData = {
   expItems: [
     {
       role: 'VTC France — Développeuse Full Stack & Chef de Projet IT',
-      periodMeta: 'Novembre 2024 – Mai 2025 | 6 mois | Casablanca, Présentiel',
+      periodMeta: 'Novembre 2025 – Avril 2026 | 6 mois | Casablanca, Présentiel',
       bullets: [
         'Développement Full Stack d\'applications web avec PHP, MySQL et JavaScript, incluant JB Manager — l\'application interne de gestion commerciale de VTC France.',
         'Conception et maintenance des fonctionnalités frontend et backend, intégration d\'APIs et maintenance applicative.',
@@ -787,7 +792,7 @@ const frData = {
     { title: 'JavaScript | 2024', issuer: '@cisco' },
     { title: 'Python | 2024', issuer: '@cisco' }
   ],
-  footerText: 'Pour voir mes projets sur GitHub et Huggingface, visitez mon portfolio <strong style="color: #000;">@portfolioasmaa.com</strong>'
+  footerText: 'Pour voir mes projets sur GitHub et Huggingface, visitez mon portfolio <a href="https://www.portfolioasmaa.com/" target="_blank" rel="noopener noreferrer" style="color: #000; font-weight: 700; text-decoration: none;">@portfolioasmaa.com</a>'
 };
 
 // 3. GERMAN TEMPLATE
@@ -822,7 +827,7 @@ const deData = {
   expItems: [
     {
       role: 'VTC France — Full-Stack-Entwicklerin & IT-Projektleiterin',
-      periodMeta: 'November 2024 – Mai 2025 | 6 Monate | Casablanca, Vor Ort',
+      periodMeta: 'November 2025 – April 2026 | 6 Monate | Casablanca, Vor Ort',
       bullets: [
         'Full-Stack-Entwicklung von Webanwendungen mit PHP, MySQL und JavaScript, einschließlich JB Manager — der internen Geschäftsverwaltungsanwendung von VTC France.',
         'Konzeption und Wartung von Frontend- und Backend-Funktionen, API-Integrationen und Softwarepflege.',
@@ -889,7 +894,7 @@ const deData = {
     { title: 'JavaScript | 2024', issuer: '@cisco' },
     { title: 'Python | 2024', issuer: '@cisco' }
   ],
-  footerText: 'Für weitere Projekte auf GitHub und Huggingface besuchen Sie mein Portfolio <strong style="color: #000;">@portfolioasmaa.com</strong>'
+  footerText: 'Für weitere Projekte auf GitHub und Huggingface besuchen Sie mein Portfolio <a href="https://www.portfolioasmaa.com/" target="_blank" rel="noopener noreferrer" style="color: #000; font-weight: 700; text-decoration: none;">@portfolioasmaa.com</a>'
 };
 
 fs.writeFileSync(path.join(rootDir, 'src', 'templates', 'cv_en.html'), buildHtml(enData), 'utf-8');
@@ -901,4 +906,4 @@ console.log('✓ Updated cv_fr.html');
 fs.writeFileSync(path.join(rootDir, 'src', 'templates', 'cv_de.html'), buildHtml(deData), 'utf-8');
 console.log('✓ Updated cv_de.html');
 
-console.log('All 3 CV templates have been updated with exact layout, exact font sizes, exact photo framing and dimensions!');
+console.log('All 3 CV templates have been updated with exact layout, exact font sizes, balanced spacing, corrected VTC dates, and active clickable links!');
