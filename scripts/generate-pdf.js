@@ -20,8 +20,11 @@ async function generatePdfs() {
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
   });
 
-  const artifactDir = 'C:\\Users\\elhin\\.gemini\\antigravity\\brain\\c1a90a57-3434-4485-afd4-df325f034bd1';
+  const artifactDir = 'C:\\Users\\elhin\\.gemini\\antigravity\\brain\\efe33941-9a71-4df9-b703-fcac57a155c9';
   const desktopDir = 'c:\\Users\\elhin\\OneDrive\\Desktop';
+  if (!fs.existsSync(artifactDir)) {
+    fs.mkdirSync(artifactDir, { recursive: true });
+  }
 
   const files = [
     {
