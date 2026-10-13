@@ -49,7 +49,7 @@ export const portfolioData = {
       role: "Full Stack Developer & Software Engineer",
       company: "VTC France",
       logo: "/companies/jb-vtc.png",
-      period: "November 2025 – April 2026",
+      period: "December 2025 – May 2026",
       duration: "6 months",
       type: "Casablanca, On-site",
       color: "#d4547e",

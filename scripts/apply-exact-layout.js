@@ -475,7 +475,7 @@ function buildHtml({ lang, title, roleTitle, bio, contactLocation, eduTitle, edu
         <span>@ASMAA EL HINT</span>
       </a>
 
-      <a href="https://www.portfolioasmaa.com/" target="_blank" class="social-item">
+      <a href="https://www.portfolioasmaa.com" target="_blank" class="social-item">
         <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="10"/>
           <line x1="2" y1="12" x2="22" y2="12"/>
@@ -503,7 +503,7 @@ function buildHtml({ lang, title, roleTitle, bio, contactLocation, eduTitle, edu
       <span>+212 632-804247</span>
     </a>
 
-    <a href="https://www.portfolioasmaa.com/" target="_blank" class="contact-item">
+    <a href="https://www.portfolioasmaa.com" target="_blank" class="contact-item">
       <svg class="contact-icon" viewBox="0 0 24 24">
         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
@@ -618,7 +618,7 @@ const enData = {
   expItems: [
     {
       role: 'VTC France — Full Stack Developer & IT Project Manager',
-      periodMeta: 'November 2025 – April 2026 | 6 months | Casablanca, On-site',
+      periodMeta: 'November 2024 – May 2025 | 6 months | Casablanca, On-site',
       bullets: [
         'Full Stack development of web applications using PHP, MySQL, and JavaScript, including JB Manager — VTC France\'s internal commercial management application.',
         'Built and maintained frontend and backend features, API integrations, and project upkeep.',
@@ -685,7 +685,7 @@ const enData = {
     { title: 'JavaScript | 2024', issuer: '@cisco' },
     { title: 'Python | 2024', issuer: '@cisco' }
   ],
-  footerText: 'For more projects on GitHub and Huggingface, visit my portfolio <a href="https://www.portfolioasmaa.com/" target="_blank" style="color: #000; font-weight: 700; text-decoration: none;">@portfolioasmaa.com</a>'
+  footerText: 'For more projects on GitHub and Huggingface, visit my portfolio <strong style="color: #000;">@portfolioasmaa.com</strong>'
 };
 
 // 2. FRENCH TEMPLATE
@@ -720,7 +720,7 @@ const frData = {
   expItems: [
     {
       role: 'VTC France — Développeuse Full Stack & Chef de Projet IT',
-      periodMeta: 'Novembre 2025 – Avril 2026 | 6 mois | Casablanca, Présentiel',
+      periodMeta: 'Novembre 2024 – Mai 2025 | 6 mois | Casablanca, Présentiel',
       bullets: [
         'Développement Full Stack d\'applications web avec PHP, MySQL et JavaScript, incluant JB Manager — l\'application interne de gestion commerciale de VTC France.',
         'Conception et maintenance des fonctionnalités frontend et backend, intégration d\'APIs et maintenance applicative.',
@@ -787,7 +787,7 @@ const frData = {
     { title: 'JavaScript | 2024', issuer: '@cisco' },
     { title: 'Python | 2024', issuer: '@cisco' }
   ],
-  footerText: 'Pour voir mes projets sur GitHub et Huggingface, visitez mon portfolio <a href="https://www.portfolioasmaa.com/" target="_blank" style="color: #000; font-weight: 700; text-decoration: none;">@portfolioasmaa.com</a>'
+  footerText: 'Pour voir mes projets sur GitHub et Huggingface, visitez mon portfolio <strong style="color: #000;">@portfolioasmaa.com</strong>'
 };
 
 // 3. GERMAN TEMPLATE
@@ -822,7 +822,7 @@ const deData = {
   expItems: [
     {
       role: 'VTC France — Full-Stack-Entwicklerin & IT-Projektleiterin',
-      periodMeta: 'November 2025 – April 2026 | 6 Monate | Casablanca, Vor Ort',
+      periodMeta: 'November 2024 – Mai 2025 | 6 Monate | Casablanca, Vor Ort',
       bullets: [
         'Full-Stack-Entwicklung von Webanwendungen mit PHP, MySQL und JavaScript, einschließlich JB Manager — der internen Geschäftsverwaltungsanwendung von VTC France.',
         'Konzeption und Wartung von Frontend- und Backend-Funktionen, API-Integrationen und Softwarepflege.',
@@ -889,7 +889,7 @@ const deData = {
     { title: 'JavaScript | 2024', issuer: '@cisco' },
     { title: 'Python | 2024', issuer: '@cisco' }
   ],
-  footerText: 'Für weitere Projekte auf GitHub und Huggingface besuchen Sie mein Portfolio <a href="https://www.portfolioasmaa.com/" target="_blank" style="color: #000; font-weight: 700; text-decoration: none;">@portfolioasmaa.com</a>'
+  footerText: 'Für weitere Projekte auf GitHub und Huggingface besuchen Sie mein Portfolio <strong style="color: #000;">@portfolioasmaa.com</strong>'
 };
 
 fs.writeFileSync(path.join(rootDir, 'src', 'templates', 'cv_en.html'), buildHtml(enData), 'utf-8');
