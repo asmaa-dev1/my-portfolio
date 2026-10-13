@@ -5,6 +5,7 @@ import { portfolioData } from '../data/portfolioData';
 import Globe3D from './Globe3D';
 import AnalogWatch from './AnalogWatch';
 import { scrollToSection } from '../utils/navigation';
+import { downloadCvFile } from '../utils/downloadCv';
 
 export default function AboutBento() {
   const { t } = useTranslation();
@@ -190,8 +191,10 @@ export default function AboutBento() {
               <a
                 href="/cv_asmaa_elhint_en.pdf"
                 download="CV_Asmaa_Elhint_EN.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadCvFile('/cv_asmaa_elhint_en.pdf', 'CV_Asmaa_Elhint_EN.pdf');
+                }}
                 className="px-3.5 py-2 rounded-full bg-white/5 dark:bg-white/5 bg-slate-100 border border-white/15 dark:border-white/15 border-slate-200 text-gray-200 dark:text-gray-200 text-slate-700 font-semibold text-xs transition-all duration-200 hover:border-[#d4547e] hover:text-white no-underline flex items-center gap-1.5 cursor-pointer"
                 title="Download CV in English"
               >
@@ -202,8 +205,10 @@ export default function AboutBento() {
               <a
                 href="/cv_asmaa_elhint_fr.pdf"
                 download="CV_Asmaa_Elhint_FR.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadCvFile('/cv_asmaa_elhint_fr.pdf', 'CV_Asmaa_Elhint_FR.pdf');
+                }}
                 className="px-3.5 py-2 rounded-full bg-white/5 dark:bg-white/5 bg-slate-100 border border-white/15 dark:border-white/15 border-slate-200 text-gray-200 dark:text-gray-200 text-slate-700 font-semibold text-xs transition-all duration-200 hover:border-[#3b82f6] hover:text-white no-underline flex items-center gap-1.5 cursor-pointer"
                 title="Télécharger le CV en Français"
               >
@@ -214,8 +219,10 @@ export default function AboutBento() {
               <a
                 href="/cv_asmaa_elhint_de.pdf"
                 download="CV_Asmaa_Elhint_DE.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadCvFile('/cv_asmaa_elhint_de.pdf', 'CV_Asmaa_Elhint_DE.pdf');
+                }}
                 className="px-3.5 py-2 rounded-full bg-white/5 dark:bg-white/5 bg-slate-100 border border-white/15 dark:border-white/15 border-slate-200 text-gray-200 dark:text-gray-200 text-slate-700 font-semibold text-xs transition-all duration-200 hover:border-[#f59e0b] hover:text-white no-underline flex items-center gap-1.5 cursor-pointer"
                 title="Lebenslauf auf Deutsch herunterladen"
               >

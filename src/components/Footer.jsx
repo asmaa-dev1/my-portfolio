@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { portfolioData } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './SocialIcons';
 import { scrollToSection } from '../utils/navigation';
+import { downloadCvFile } from '../utils/downloadCv';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -113,27 +114,33 @@ export default function Footer() {
               <a
                 href="/cv_asmaa_elhint_en.pdf"
                 download="CV_Asmaa_Elhint_EN.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-1 rounded-lg bg-white/5 dark:bg-white/5 bg-slate-200 hover:bg-white/10 text-gray-300 dark:text-gray-300 text-slate-700 hover:text-white text-[11px] font-mono font-semibold transition-colors no-underline flex items-center gap-1 border border-white/10 dark:border-white/10 border-slate-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadCvFile('/cv_asmaa_elhint_en.pdf', 'CV_Asmaa_Elhint_EN.pdf');
+                }}
+                className="px-2.5 py-1 rounded-lg bg-white/5 dark:bg-white/5 bg-slate-200 hover:bg-white/10 text-gray-300 dark:text-gray-300 text-slate-700 hover:text-white text-[11px] font-mono font-semibold transition-colors no-underline flex items-center gap-1 border border-white/10 dark:border-white/10 border-slate-300 cursor-pointer"
               >
                 <span>📄 CV (EN)</span>
               </a>
               <a
                 href="/cv_asmaa_elhint_fr.pdf"
                 download="CV_Asmaa_Elhint_FR.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-1 rounded-lg bg-white/5 dark:bg-white/5 bg-slate-200 hover:bg-white/10 text-gray-300 dark:text-gray-300 text-slate-700 hover:text-white text-[11px] font-mono font-semibold transition-colors no-underline flex items-center gap-1 border border-white/10 dark:border-white/10 border-slate-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadCvFile('/cv_asmaa_elhint_fr.pdf', 'CV_Asmaa_Elhint_FR.pdf');
+                }}
+                className="px-2.5 py-1 rounded-lg bg-white/5 dark:bg-white/5 bg-slate-200 hover:bg-white/10 text-gray-300 dark:text-gray-300 text-slate-700 hover:text-white text-[11px] font-mono font-semibold transition-colors no-underline flex items-center gap-1 border border-white/10 dark:border-white/10 border-slate-300 cursor-pointer"
               >
                 <span>📄 CV (FR)</span>
               </a>
               <a
                 href="/cv_asmaa_elhint_de.pdf"
                 download="CV_Asmaa_Elhint_DE.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-2.5 py-1 rounded-lg bg-white/5 dark:bg-white/5 bg-slate-200 hover:bg-white/10 text-gray-300 dark:text-gray-300 text-slate-700 hover:text-white text-[11px] font-mono font-semibold transition-colors no-underline flex items-center gap-1 border border-white/10 dark:border-white/10 border-slate-300"
+                onClick={(e) => {
+                  e.preventDefault();
+                  downloadCvFile('/cv_asmaa_elhint_de.pdf', 'CV_Asmaa_Elhint_DE.pdf');
+                }}
+                className="px-2.5 py-1 rounded-lg bg-white/5 dark:bg-white/5 bg-slate-200 hover:bg-white/10 text-gray-300 dark:text-gray-300 text-slate-700 hover:text-white text-[11px] font-mono font-semibold transition-colors no-underline flex items-center gap-1 border border-white/10 dark:border-white/10 border-slate-300 cursor-pointer"
               >
                 <span>📄 CV (DE)</span>
               </a>

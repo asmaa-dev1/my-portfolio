@@ -1,9 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FileText, Download, ExternalLink, X, Eye, CheckCircle, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { downloadCvFile } from '../utils/downloadCv';
 
 export default function ResumeModal({ isOpen, onClose }) {
   const { t } = useTranslation();
+  const [downloadingLang, setDownloadingLang] = useState(null);
+
+  const handleDownload = async (e, item) => {
+    e.preventDefault();
+    setDownloadingLang(item.lang);
+    try {
+      await downloadCvFile(item.pdfPath, item.downloadName);
+    } finally {
+      setTimeout(() => setDownloadingLang(null), 1200);
+    }
+  };
 
   // Close on Escape key
   useEffect(() => {
@@ -142,14 +154,24 @@ export default function ResumeModal({ isOpen, onClose }) {
                   <ExternalLink className="w-3 h-3 opacity-60 ml-auto" />
                 </a>
 
-                <a
-                  href={item.pdfPath}
-                  download={item.downloadName}
-                  className={`w-full py-2.5 px-3 rounded-xl ${item.btnGrad} hover:opacity-95 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-md ${item.btnShadow} no-underline cursor-pointer`}
+                <button
+                  type="button"
+                  onClick={(e) => handleDownload(e, item)}
+                  disabled={downloadingLang === item.lang}
+                  className={`w-full py-2.5 px-3 rounded-xl ${item.btnGrad} hover:opacity-95 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-md ${item.btnShadow} cursor-pointer disabled:opacity-80`}
                 >
-                  <Download className="w-3.5 h-3.5" />
-                  <span>{item.downloadLabel}</span>
-                </a>
+                  {downloadingLang === item.lang ? (
+                    <>
+                      <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin inline-block" />
+                      <span>Downloading...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-3.5 h-3.5" />
+                      <span>{item.downloadLabel}</span>
+                    </>
+                  )}
+                </button>
               </div>
             </div>
           ))}
